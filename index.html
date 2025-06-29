@@ -1,69 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>My Blog</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header>
     <h1>My Awesome Blog</h1>
     <nav>
       <ul>
-        <li><a href="#post1">Post 1</a></li>
-        <li><a href="#post2">Post 2</a></li>
-        <li><a href="#post3">Post 3</a></li>
+        <li><a href="#post1">Heartfelt Chronicles</a></li>
+        <li><a href="#post2">Wander & Wonder</a></li>
+        <li><a href="#post3">Miles & Memories</a></li>
       </ul>
     </nav>
   </header>
 
+  <!-- Search Bar -->
+  <div id="search-container">
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Search blog posts..."
+      onkeyup="searchPosts()"
+    />
+  </div>
+
   <main>
     <!-- Blog Post 1 -->
-    <article id="post1" class="blog-post">
-      <h2>Post Title One</h2>
-      <p class="date">Published on: 2025-06-01</p>
-      <img src="https://via.placeholder.com/600x300" alt="Post Image 1">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      <div class="comments">
-        <h3>Comments</h3>
-        <div class="comment-list" id="comments1"></div>
-        <input type="text" placeholder="Your Name" id="name1">
-        <textarea placeholder="Your Comment" id="message1"></textarea>
-        <button onclick="addComment(1)">Submit</button>
-      </div>
-    </article>
+    <section id="post1" class="blog-post">
+      <h2>Heartfelt Chronicles</h2>
+      <p class="date">Published: June 29, 2025</p>
+      <img src="Heartfelt Chronicles.jpeg" alt="Post Image 1" />
+      <p>A personal blog sharing emotional stories and celebrations, highlighting love, gratitude, and meaningful moments.</p>
 
-    <!-- Repeat for Post 2 and Post 3 -->
-    <article id="post2" class="blog-post">
-      <h2>Post Title Two</h2>
-      <p class="date">Published on: 2025-06-03</p>
-      <img src="https://via.placeholder.com/600x300" alt="Post Image 2">
-      <p>Aliquam tincidunt mauris eu risus.</p>
-      <div class="comments">
-        <h3>Comments</h3>
-        <div class="comment-list" id="comments2"></div>
-        <input type="text" placeholder="Your Name" id="name2">
-        <textarea placeholder="Your Comment" id="message2"></textarea>
-        <button onclick="addComment(2)">Submit</button>
+      <!-- Tags -->
+      <div class="tags">
+        <span class="tag">Family</span>
+        <span class="tag">Reflection</span>
+        <span class="tag">Love</span>
       </div>
-    </article>
 
-    <article id="post3" class="blog-post">
-      <h2>Post Title Three</h2>
-      <p class="date">Published on: 2025-06-05</p>
-      <img src="https://via.placeholder.com/600x300" alt="Post Image 3">
-      <p>Phasellus viverra nulla ut metus varius laoreet.</p>
+      <!-- Social Sharing -->
+      <div class="share">
+        <p>Share this post:</p>
+        <a href="#" onclick="alert('Simulated share to Facebook')">Facebook</a> |
+        <a href="#" onclick="alert('Simulated share to Twitter')">Twitter</a> |
+        <a href="#" onclick="alert('Simulated share to Instagram')">Instagram</a>
+      </div>
+
+      <!-- Comments -->
       <div class="comments">
         <h3>Comments</h3>
-        <div class="comment-list" id="comments3"></div>
-        <input type="text" placeholder="Your Name" id="name3">
-        <textarea placeholder="Your Comment" id="message3"></textarea>
-        <button onclick="addComment(3)">Submit</button>
+        <form onsubmit="addComment(event, 'comments1')">
+          <input type="text" placeholder="Your Name" required />
+          <textarea placeholder="Your Comment" required></textarea>
+          <button type="submit">Post Comment</button>
+        </form>
+        <div id="comments1"></div>
       </div>
-    </article>
+    </section>
+
+    <!-- Blog Post 2 -->
+    <section id="post2" class="blog-post">
+      <h2>Wander & Wonder</h2>
+      <p class="date">Published: June 20, 2025</p>
+      <img src="Wander & Wonder.jpeg" alt="Post Image 2" />
+      <p>A travel and lifestyle blog sharing unique journeys, cultural experiences, travel guides, and reflections from around the world.</p>
+
+      <div class="tags">
+        <span class="tag">TravelDiaries</span>
+        <span class="tag">Wanderlust</span>
+        <span class="tag">NatureEscape</span>
+      </div>
+
+      <div class="share">
+        <p>Share this post:</p>
+        <a href="#" onclick="alert('Simulated share to Facebook')">Facebook</a> |
+        <a href="#" onclick="alert('Simulated share to Twitter')">Twitter</a> |
+        <a href="#" onclick="alert('Simulated share to Instagram')">Instagram</a>
+      </div>
+
+      <div class="comments">
+        <h3>Comments</h3>
+        <form onsubmit="addComment(event, 'comments2')">
+          <input type="text" placeholder="Your Name" required />
+          <textarea placeholder="Your Comment" required></textarea>
+          <button type="submit">Post Comment</button>
+        </form>
+        <div id="comments2"></div>
+      </div>
+    </section>
+
+    <!-- Blog Post 3 -->
+    <section id="post3" class="blog-post">
+      <h2>Miles & Memories</h2>
+      <p class="date">Published: June 10, 2025</p>
+      <img src="Miles & Memories.jpeg" alt="Post Image 3" />
+      <p>A personal travel diary capturing unforgettable adventures, travel tips, food discoveries, and moments that turn into lasting memories.</p>
+
+      <div class="tags">
+        <span class="tag">Adventure</span>
+        <span class="tag">Solo Travel</span>
+        <span class="tag">Travel Tips</span>
+      </div>
+
+      <div class="share">
+        <p>Share this post:</p>
+        <a href="#" onclick="alert('Simulated share to Facebook')">Facebook</a> |
+        <a href="#" onclick="alert('Simulated share to Twitter')">Twitter</a> |
+        <a href="#" onclick="alert('Simulated share to Instagram')">Instagram</a>
+      </div>
+
+      <div class="comments">
+        <h3>Comments</h3>
+        <form onsubmit="addComment(event, 'comments3')">
+          <input type="text" placeholder="Your Name" required />
+          <textarea placeholder="Your Comment" required></textarea>
+          <button type="submit">Post Comment</button>
+        </form>
+        <div id="comments3"></div>
+      </div>
+    </section>
   </main>
 
   <script src="script.js"></script>
 </body>
 </html>
+
