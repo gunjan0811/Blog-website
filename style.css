@@ -1,70 +1,217 @@
+/* Base reset */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  color: #333;
+}
+
+/* Header */
+header {
+  background-color: #333;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#search-container {
+  text-align: center;
+  background: #eee;
+  padding: 15px 0;
+}
+
+#searchInput {
+  padding: 10px;
+  width: 60%;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* Blog Post */
+.blog-post {
+  background-color: white;
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.blog-post h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.blog-post .date {
+  color: #777;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.blog-post img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.blog-post p {
+  font-size: 17px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Tags Section */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.tag {
+  padding: 8px 14px;
+  font-size: 14px;
+  background: linear-gradient(to right, #f0f0f0, #e8e8e8);
+  color: #444;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.tag:hover {
+  background: #dceefb;
+  color: #0077cc;
+  border-color: #0077cc;
+}
+
+
+/* Share section */
+.share {
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+.share a {
+  color: #0077cc;
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+.share a:hover {
+  text-decoration: underline;
+}
+/* Comments Section */
+.comments {
+  max-width: 600px;
+  margin: 10px auto;
+  padding: 10px;
+  background: white;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.comments h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.comments form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.comments input,
+.comments textarea {
+  width: 90%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  resize: vertical;
+}
+
+.comments button {
+  padding: 10px 20px;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.comments button:hover {
+  background-color: #005fa3;
+}
+
+/* Displayed comments */
+#commentList {
+  margin-top: 20px;
+  text-align: left;
+}
+
+#commentList .comment {
+  background: #f9f9f9;
+  padding: 10px 15px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  border-left: 4px solid #0077cc;
+}
+
+#commentList .comment strong {
+  color: #333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav ul li {
+    display: block;
+    margin: 8px 0;
   }
-  
-  header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
+
+  #searchInput {
+    width: 85%;
   }
-  
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  nav a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  main {
-    padding: 20px;
-  }
-  
+
   .blog-post {
-    background: white;
-    margin-bottom: 20px;
-    padding: 15px;
-    border-radius: 8px;
+    margin: 20px 10px;
+    padding: 20px 15px;
   }
-  
-  .blog-post img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
+
+  .blog-post h2 {
+    font-size: 22px;
   }
-  
-  .comments {
-    margin-top: 20px;
+
+  .blog-post p {
+    font-size: 16px;
   }
-  
-  .comments input, .comments textarea {
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 8px;
-  }
-  
-  button {
-    padding: 8px 16px;
-    background: #007BFF;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  @media (max-width: 600px) {
-    nav ul {
-      flex-direction: column;
-    }
-  
-    .blog-post {
-      font-size: 16px;
-    }
-  }
+}
   
