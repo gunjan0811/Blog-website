@@ -1,18 +1,31 @@
-function addComment(postId) {
-    const name = document.getElementById(`name${postId}`).value;
-    const message = document.getElementById(`message${postId}`).value;
-    const commentList = document.getElementById(`comments${postId}`);
-  
-    if (name && message) {
-      const comment = document.createElement("p");
-      comment.innerHTML = `<strong>${name}:</strong> ${message}`;
-      commentList.appendChild(comment);
-  
-      // Clear inputs
-      document.getElementById(`name${postId}`).value = "";
-      document.getElementById(`message${postId}`).value = "";
+// Comment handling
+function addComment(event, commentBoxId) {
+  event.preventDefault();
+
+  const form = event.target;
+  const name = form.querySelector('input').value;
+  const message = form.querySelector('textarea').value;
+  const commentBox = document.getElementById(commentBoxId);
+
+  const comment = document.createElement('p');
+  comment.innerHTML = `<strong>${name}:</strong> ${message}`;
+  commentBox.appendChild(comment);
+
+  form.reset();
+}
+
+// Blog search feature
+function searchPosts() {
+  const input = document.getElementById('searchInput').value.toLowerCase();
+  const posts = document.getElementsByClassName('blog-post');
+
+  for (let post of posts) {
+    const title = post.querySelector('h2').textContent.toLowerCase();
+    const content = post.querySelector('p').textContent.toLowerCase();
+    if (title.includes(input) || content.includes(input)) {
+      post.style.display = '';
     } else {
-      alert("Please enter your name and comment!");
+      post.style.display = 'none';
     }
   }
-  
+}
